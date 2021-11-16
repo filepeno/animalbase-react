@@ -33,6 +33,7 @@ function App() {
   ];
   const editedAnimals = prepareObjects(animalsData);
   console.log(editedAnimals);
+  const animalList = editedAnimals.map((animal) => <Animal {...animal} key={animal.name} />);
   return (
     <div className="App">
       <h1>Animals</h1>
@@ -47,10 +48,7 @@ function App() {
         <thead>
           <Sort />
         </thead>
-        <tbody>
-          <Animal />
-          <Animal />
-        </tbody>
+        <tbody>{animalList}</tbody>
       </table>
     </div>
   );
