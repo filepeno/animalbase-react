@@ -5,13 +5,18 @@ export default function Animal(props) {
   const initialStatus = false;
   const [status, changeStarStatus] = useState(initialStatus);
   function clickOnStar() {
-    console.log("status changed");
+    console.log("star status changed");
     changeStarStatus((status) => (status ? false : true));
+  }
+  const [winnerStatus, changeWinnerStatus] = useState(false);
+  function clickOnWinner() {
+    console.log("winner status changed");
+    changeWinnerStatus((winnerStatus) => (winnerStatus ? false : true));
   }
 
   return (
     <tr>
-      <td data-field="winner" data-winner="false"></td>
+      <td onClick={clickOnWinner} data-field="winner" data-winner={winnerStatus}></td>
       <td onClick={clickOnStar} data-field="star">
         {status ? "⭐" : "☆"}
       </td>
