@@ -39,7 +39,7 @@ function App() {
       <h1>Animals</h1>
       <p>
         {" "}
-        <Filter />
+        <Filter animals={animalList} />
       </p>
 
       <hr />
