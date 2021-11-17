@@ -16,7 +16,9 @@ export default function Filter(props) {
         }
       }
     }
-    console.log(filteredAnimals);
+    filteredAnimals.forEach((element) => {
+      console.log(element.props);
+    });
   };
 
   return (
